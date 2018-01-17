@@ -9,11 +9,8 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    p session[:player1_name]#.inspect
     @player1_name = session[:player1_name]#.inspect
     @player2_name = session[:player2_name]#.inspect
-    p @player1_name
-    p @player2_name
     erb(:play)
   end
 
