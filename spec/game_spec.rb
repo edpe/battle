@@ -21,4 +21,11 @@ describe Game do
       expect(player2).to have_received(:receive_damage)
     end
   end
+
+  describe '#change_player' do
+    it 'switches player' do
+      game.change_player
+      expect(game.current_player).to eq player2
+    end
+  end
 end
