@@ -1,17 +1,12 @@
 require 'sinatra/base'
 require './lib/player.rb'
+
 class Battle < Sinatra::Base
 
   enable :sessions
 
   get '/' do
-    erb(:index)
-  end
-
-  get '/play' do
-    @player1_name = $player1.name
-    @player2_name = $player2.name
-    erb(:play)
+    erb :index
   end
 
   post '/names' do
@@ -20,12 +15,15 @@ class Battle < Sinatra::Base
     redirect to ('/play')
   end
 
+  get '/play' do
+    @player1_name = $player1.name
+    @player2_name = $player2.name
+    erb(:play)
+  end
+
   get '/attack' do
     @player1_name = $player1.name
     @player2_name = $player2.name
     erb(:attack)
   end
-
-
-  run! if app_file == $0
 end
