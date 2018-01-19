@@ -26,12 +26,20 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     Attack.run(@game.target)
-    erb(:attack)
+    if @game.player1.dead? || @game.player2.dead?
+      redirect('/lose')
+    else
+      erb(:attack)
+    end
   end
 
   post '/change_player' do
     $game.change_player
     redirect('/play')
+  end
+
+  get '/lose' do
+    erb(:lose)
   end
 
 end
