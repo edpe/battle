@@ -1,3 +1,9 @@
-<%= @game.current_player.name %> attacked <%= @game.target.name %>
-<br>
-<a href="/play"> Ok</a>
+<% if @game.current_player == @game.player1 %>
+<%= @game.player1.name %> attacked <%= @game.player2.name %>
+<% else %>
+<%= @game.player2.name %> attacked <%= @game.player1.name %>
+<% end %>
+
+<form action="/change_player" method="post">
+  <input type="submit" value="Ok">
+</form>
