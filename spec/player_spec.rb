@@ -10,17 +10,13 @@ describe Player do
 
   describe '#receive_damage' do
     it "reduces player own hit points" do
-      expect(player.receive_damage).to eq 90
+      expect { player.receive_damage }.to change { player.hp }.by(-10)
     end
   end
 
   describe '#dead?' do
     it ' tests a player is dead' do
       player = described_class.new('ed', 0)
-      # p player.hp
-      # # new_player = Player.new
-      # allow(player).to receive(:hp).and_return 0
-      # p player.hp
       expect(player.dead?).to eq true
     end
   end
