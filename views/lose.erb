@@ -1,1 +1,9 @@
-<p> YOU'VE LOST </p>
+<% if @game.player1.dead? %>
+  <%= @game.player1.name %> has lost!
+<% else %>
+  <%= @game.player2.name %> has lost!
+<% end %>
+
+
+<!-- 
+<p> YOU'VE LOST </p> -->

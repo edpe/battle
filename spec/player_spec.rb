@@ -17,7 +17,10 @@ describe Player do
   describe '#dead?' do
     it ' tests a player is dead' do
       player = described_class.new('ed', 0)
-      # allow(Player).to receive(:hp).and_return 0
+      # p player.hp
+      # # new_player = Player.new
+      # allow(player).to receive(:hp).and_return 0
+      # p player.hp
       expect(player.dead?).to eq true
     end
   end

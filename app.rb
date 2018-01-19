@@ -39,6 +39,7 @@ class Battle < Sinatra::Base
   end
 
   get '/lose' do
+    @game = $game
     erb(:lose)
   end
 
