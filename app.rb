@@ -9,6 +9,7 @@ class Battle < Sinatra::Base
 
   before do
     @game = Game.instance
+
   end
 
   get '/' do
@@ -26,8 +27,9 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attack' do
+  post '/attack' do
     Attack.run(@game.target)
+    @attack_move = params[:attack_move]
     if @game.player1.dead? || @game.player2.dead?
       redirect('/lose')
     else

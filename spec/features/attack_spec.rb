@@ -11,4 +11,9 @@ feature 'Attack' do
     click_link 'Attack'
     expect(page).to have_content 'Lewis attacked Ed'
   end
+
+  scenario 'player cna choose attack type' do
+    sign_in_and_play
+    expect(page).to have_content "Karate Chop"
+  end
 end

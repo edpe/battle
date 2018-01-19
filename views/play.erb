@@ -2,4 +2,18 @@
 <h1><%=@game.player1.name%> vs <%=@game.player2.name%></h1>
 <h1><%=@game.player1.name%>: HP<%=@game.player1.hp%></h1>
 <h1><%=@game.player2.name%>: HP<%=@game.player2.hp%></h1>
-<a href="/attack">Attack</a>
+
+
+
+<form action='/attack' method='post'>
+  <select name="attack_move">
+    <option value="Karate Chop">Karate Chop</option>
+    <option value="Roundhouse Kick">Roundhouse Kick</option>
+    <option value="Flying Uppercut">Flying Uppercut</option>
+    <option value="Dragon Tackle">Dragon Tackle</option>
+    <option value="Insanity Snap">Insanity Snap</option>
+    <option value="Three Annihilations Kick">Three Annihilations Kick</option>
+    <option value="Angel Finger of the Mystic Mystery">Angel Finger of the Mystic Mystery</option>
+  </select>
+  <input type='submit' value='Attack'>
+</form>
