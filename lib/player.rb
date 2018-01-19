@@ -10,10 +10,14 @@ class Player
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= random_number
+  end
+
+  def random_number
+    rand(100)
   end
 
   def dead?
-    @hp == 0
+    @hp <= 0
   end
 end
