@@ -10,4 +10,9 @@ feature 'Hit points' do
     click_link 'Ok'
     expect(page).to have_content 'Alex: HP90'
   end
+
+  scenario 'Player 1 can see their own hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Ed: HP100'
+  end
 end

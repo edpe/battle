@@ -28,4 +28,15 @@ describe Game do
       expect(game.current_player).to eq player2
     end
   end
+
+  describe '#target' do
+    it 'returns the player being targeted' do
+      expect(game.target).to eq player2
+    end
+
+    it 'returns a new target after the current player changes' do
+      game.change_player
+      expect(game.target).to eq player1
+    end
+  end
 end
